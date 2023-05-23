@@ -1,0 +1,80 @@
+body {
+    font-family: 'Epilogue';
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 0;
+    color: white;
+    background-color: #28293E;
+    img {
+        width: 100%;
+    }
+}
+
+// Montando o Grid para posicionar os elementos de acordo com o design disponibilizado //
+.container-workspace__child {
+    position: relative;
+}
+
+.container-workspace__child:nth-child(1) {
+    grid-area: uxui;
+}
+
+.container-workspace__child:nth-child(2) {
+    grid-area: keyboard;
+}
+
+.container-workspace__child:nth-child(3) {
+    grid-area: workmedia;
+}
+
+.container-workspace__child:nth-child(4) {
+    grid-area: dddone;
+}
+
+.container-workspace__text {
+    position: absolute;
+    bottom: 25px;
+    left: 20px;
+
+    span {
+        background: white;
+        color: #090039;
+        font-size: clamp(0.9rem, 1.2vw, 2rem);
+        padding: 10px;
+        border-radius: 20px;
+    }
+    h2 {
+        font-size: clamp(1.5rem, 2.5vw, 3rem);
+    }
+}
+
+// Adaptações para telas maiores (a partir de 30em) utilizando @media //
+
+@media (min-width: 30em) {
+    .container-workspace {
+        display: grid;
+        grid-template-areas: 
+            'uxui uxui keyboard keyboard keyboard' 
+            'workmedia workmedia workmedia dddone dddone';
+        justify-content: center;
+        gap: 1.2rem;
+        margin: 1.2rem;
+    }
+
+    .container-workspace__text {
+        position: absolute;
+        bottom: 25px;
+        left: 20px;
+
+        span {
+            background: white;
+            color: #090039;
+            font-size: clamp(0.9rem, 1.2vw, 2rem);
+            padding: 10px;
+            border-radius: 20px;
+        }
+        h2 {
+            font-size: clamp(1.2rem, 2.5vw, 3rem);
+        }
+    }
+}
